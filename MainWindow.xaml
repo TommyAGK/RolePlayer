@@ -1,0 +1,696 @@
+﻿<Window x:Class="RolePlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RolePlayer"
+        mc:Ignorable="d"
+        Title="Pathfinder Character" Height="1056" Width="813" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Height="1066" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="CharacterBIO1" Margin="360,16.333,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" d:IsLocked="True">
+            <TextBox x:Name="charPlayerName" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="3" Margin="230,0,0,94.907"/>
+            <TextBlock x:Name="textBlock6" HorizontalAlignment="Right" Margin="0,19.572,136.596,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" FontSize="9.333" Width="49.672"/>
+            <TextBox x:Name="charHomeLand" Margin="331.725,36.986,0,57.921" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="6"/>
+            <TextBox x:Name="charCharName" Height="19.573" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" TabIndex="1" Margin="0,0,277.1,0"/>
+            <TextBox x:Name="charAlignment" Height="19.573" Margin="156.176,0,203.74,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" TabIndex="2"/>
+            <TextBlock x:Name="textBlock_Copy13" Margin="331.725,59.327,53.744,42.739" TextWrapping="Wrap" Text="Homeland" FontSize="9.333" d:LayoutOverrides="Width, Height"/>
+            <TextBlock x:Name="textBlock_Copy14" Margin="160,19.572,225.589,82.494" TextWrapping="Wrap" Text="Alignment" FontSize="9.333" d:LayoutOverrides="Width, Height"/>
+            <TextBlock x:Name="textBlock_Copy15" Margin="2.013,21.916,0,80.15" TextWrapping="Wrap" Text="Character Name" FontSize="9.333" HorizontalAlignment="Left" Width="67.987" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charClass" Margin="0,37,304,58" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="4"/>
+            <TextBlock x:Name="textBlock_Copy16" Margin="2,59,0,43" TextWrapping="Wrap" FontSize="9.333" HorizontalAlignment="Left" Width="177"><Run Text="Character Class "/><Run Text="                           "/><Run Text="Level"/></TextBlock>
+            <TextBox x:Name="charRace" Margin="0,77.494,323.276,17.413" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="7"/>
+            <TextBox x:Name="charSize" Margin="111.249,77.494,277.1,17.413" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="8"/>
+            <TextBox x:Name="charEyes" Margin="385.452,77.494,8.647,17.413" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="14"/>
+            <TextBlock x:Name="textBlock_Copy17" Margin="2.013,102.067,403.139,-0.001" TextWrapping="Wrap" Text="Race" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBlock x:Name="textBlock_Copy18" Margin="118.346,102.067,287.1,-0.001" TextWrapping="Wrap" Text="Size" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charGender" Margin="156.176,77.493,240.42,17.414" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="9"/>
+            <TextBlock x:Name="textBlock_Copy19" Margin="156.176,102.066,236.202,0" TextWrapping="Wrap" Text="Gender" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charAge" Margin="192.856,77.493,203.74,17.414" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="10"/>
+            <TextBlock x:Name="textBlock_Copy20" Margin="197.856,102.066,212.625,0" TextWrapping="Wrap" Text="Age" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charHeight" Margin="230.911,77.493,148.276,17.414" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="11"/>
+            <TextBlock x:Name="textBlock_Copy21" Margin="235.911,102.066,160.685,0" TextWrapping="Wrap" Text="Height" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBlock x:Name="textBlock_Copy22" Margin="0,102.067,0,-0.001" TextWrapping="Wrap" Text="Eyes" FontSize="9.333" HorizontalAlignment="Right" Width="35.898" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charDeity" Margin="230,36.986,107.516,57.921" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="5"/>
+            <TextBlock x:Name="textBlock_Copy23" Margin="235.911,59.327,162.883,42.739" TextWrapping="Wrap" Text="Deity" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charWeight" Margin="285,77.495,93.276,17.412" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="12"/>
+            <TextBlock x:Name="textBlock_Copy24" Margin="289.08,102.066,107.516,0" TextWrapping="Wrap" Text="Weight" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charHair" Margin="344.554,77.493,49.545,17.414" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="13"/>
+            <TextBlock x:Name="textBlock_Copy25" Margin="351.48,102.066,40.898,0" TextWrapping="Wrap" Text="Hair" FontSize="9.333" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="charLevel" Margin="129,37,249,58" TextWrapping="Wrap" BorderThickness="0,0,0,1" TabIndex="4"/>
+
+        </Grid>
+        <Grid x:Name="CoreStatBlock1" HorizontalAlignment="Left" Height="188.444" Margin="9.46,96.556,0,0" VerticalAlignment="Top" Width="186.652" d:LayoutOverrides="VerticalAlignment">
+            <TextBlock x:Name="textBlock7" HorizontalAlignment="Left" Margin="1,7.477,0,0" TextWrapping="Wrap" Text="Ability Name" VerticalAlignment="Top" FontSize="8" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock8" HorizontalAlignment="Left" Margin="0,35.604,0,0" TextWrapping="Wrap" Text="Strength" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy8" HorizontalAlignment="Left" Height="15" Margin="0,52.228,0,0" TextWrapping="Wrap" Text="DEX" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy8" HorizontalAlignment="Left" Margin="0,65.987,0,0" TextWrapping="Wrap" Text="Dexterity" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy9" HorizontalAlignment="Left" Margin="0,80.855,0,0" TextWrapping="Wrap" Text="CON" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker" Height="15" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy9" HorizontalAlignment="Left" Margin="0,94.444,0,0" TextWrapping="Wrap" Text="Constitution" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy10" HorizontalAlignment="Left" Height="15" Margin="0,138.444,0,0" TextWrapping="Wrap" Text="WIS" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy10" HorizontalAlignment="Left" Margin="0,152.478,0,0" TextWrapping="Wrap" Text="Wisdom" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy11" HorizontalAlignment="Left" Margin="0,165.222,0,0" TextWrapping="Wrap" Text="CHA" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker" Height="15" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy11" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Charisma" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" FontFamily="Segoe Marker" Margin="0,179.958,0,0"/>
+            <TextBlock x:Name="textBlock9" HorizontalAlignment="Left" Height="15" Margin="0,21.771,0,0" TextWrapping="Wrap" Text="STR" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy46" HorizontalAlignment="Left" Margin="50,0.063,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Abili"/><Run Text="ty"/><LineBreak/><Run Text="Score"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy47" Margin="79,0,80.452,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Abili"/><Run Text="ty"/><LineBreak/><Run Text="Modifier"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy48" HorizontalAlignment="Right" Margin="0,0,43.328,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Temp"/><LineBreak/><Run Text="Adjustment"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy49" HorizontalAlignment="Right" Margin="0,0.063,15.152,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Temp"/><LineBreak/><Run Text="Modifier"/></TextBlock>
+            <TextBox x:Name="coreStr" HorizontalAlignment="Left" Height="20.916" Margin="46,21.771,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="15" FontFamily="Segoe Marker" TextChanged="UpdateScore"/>
+            <TextBox x:Name="coreDex" HorizontalAlignment="Left" Height="20.916" Margin="46,52.228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" FontFamily="Segoe Marker" TextChanged="UpdateScore"/>
+            <TextBox x:Name="coreCon" HorizontalAlignment="Left" Margin="46,80.855,0,0" TextWrapping="Wrap" Width="28" TabIndex="17" FontFamily="Segoe Marker" Height="20.916" VerticalAlignment="Top" TextChanged="UpdateScore"/>
+            <TextBox x:Name="coreWis" HorizontalAlignment="Left" Height="20.916" Margin="46,138.444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="18" FontFamily="Segoe Marker" TextChanged="UpdateScore"/>
+            <TextBox x:Name="coreCha" HorizontalAlignment="Left" Height="20.916" Margin="46,165.222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="19" FontFamily="Segoe Marker" TextChanged="UpdateScore"/>
+            <TextBox x:Name="coreModStr" Height="20.916" Margin="79,21.771,79.652,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True" TextChanged="UpdateSheet"/>
+            <TextBox x:Name="coreModDex" Height="20.916" Margin="79,52.228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True" TextChanged="UpdateSheet"/>
+            <TextBox x:Name="coreModCon" Margin="79,80.855,79.652,0" TextWrapping="Wrap" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True" Height="20.916" VerticalAlignment="Top" TextChanged="UpdateSheet"/>
+            <TextBox x:Name="coreModWis" Height="20.916" Margin="79,138.444,79.652,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True" TextChanged="UpdateSheet"/>
+            <TextBox x:Name="coreModCha" Height="20.916" Margin="79,165.222,79.652,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True" TextChanged="UpdateSheet"/>
+            <TextBox x:Name="coreAdjustStr" HorizontalAlignment="Right" Height="20.916" Margin="0,21.771,46.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreAdjustDex" HorizontalAlignment="Right" Height="20.916" Margin="0,52.228,46.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreAdjustCon" HorizontalAlignment="Right" Margin="0,80.855,46.652,0" TextWrapping="Wrap" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="coreAdjustWis" HorizontalAlignment="Right" Height="20.916" Margin="0,138.444,46.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreAdjustCha" HorizontalAlignment="Right" Height="20.916" Margin="0,165.222,46.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreTModStr" HorizontalAlignment="Right" Margin="0,21.771,13.652,0" TextWrapping="Wrap" Width="28" Height="20.916" VerticalAlignment="Top" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreTModDex" HorizontalAlignment="Right" Height="20.916" Margin="0,52.228,13.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreTModCon" HorizontalAlignment="Right" Margin="0,80.855,13.652,0" TextWrapping="Wrap" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="coreTModWis" HorizontalAlignment="Right" Height="20.916" Margin="0,138.444,13.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreTModCha" HorizontalAlignment="Right" Height="20.916" Margin="0,165.222,13.652,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy22" HorizontalAlignment="Left" Margin="0,109.444,0,0" TextWrapping="Wrap" Text="INT" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker" Height="15" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy51" HorizontalAlignment="Left" Margin="0,123.033,0,0" TextWrapping="Wrap" Text="Intelligence" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreInt" HorizontalAlignment="Left" Margin="46,109.444,0,0" TextWrapping="Wrap" Width="28" TabIndex="17" FontFamily="Segoe Marker" Height="20.916" VerticalAlignment="Top" TextChanged="UpdateScore"/>
+            <TextBox x:Name="coreModInt" Margin="79,109.444,79.652,0" TextWrapping="Wrap" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True" Height="20.916" VerticalAlignment="Top" TextChanged="UpdateSheet"/>
+            <TextBox x:Name="coreAdjustInt" HorizontalAlignment="Right" Margin="0,109.444,46.652,0" TextWrapping="Wrap" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="coreTmodInt" HorizontalAlignment="Right" Margin="0,109.444,13.652,0" TextWrapping="Wrap" Width="28" TabIndex="16" IsTabStop="False" FontFamily="Segoe Marker" Height="20.916" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="HP_Initative1" Height="149.187" Margin="196.652,135.813,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="197.05" d:LayoutOverrides="VerticalAlignment" d:IsLocked="True">
+            <TextBlock x:Name="h1" HorizontalAlignment="Left" Margin="0,13.833,0,0" TextWrapping="Wrap" Text="Hit Points" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy12" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="HP" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreHP" Height="23" Margin="49.7,0,77.294,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="20" FontFamily="Segoe Marker" TextAlignment="Right"/>
+            <TextBlock x:Name="textBlock10" HorizontalAlignment="Left" Margin="54.7,0,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Height="10" Width="15" FontSize="8" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreDR" HorizontalAlignment="Right" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="64.89" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock4_Copy1" HorizontalAlignment="Right" Margin="0,0,48.637,0" TextWrapping="Wrap" Text="DR" VerticalAlignment="Top" Height="10" Width="10" FontSize="8" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreWounds" Margin="0.11,35.927,0,74.187" TextWrapping="Wrap" AcceptsReturn="True" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy50" HorizontalAlignment="Left" Margin="0.11,26.633,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Wounds / Current HP" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreNonLethal" Height="17.906" Margin="0.11,0,0,44.187" TextWrapping="Wrap" VerticalAlignment="Bottom" AcceptsReturn="True" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy51" HorizontalAlignment="Left" Margin="4.7,0,0,62.093" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Nonlethal Damage" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy13" HorizontalAlignment="Left" Margin="0.11,0,0,15.354" TextWrapping="Wrap" Text="Modifier" VerticalAlignment="Bottom" FontSize="6.667" Foreground="White" Background="Black" Width="70" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy13" HorizontalAlignment="Left" Height="15" Margin="0.11,0,0,24.187" TextWrapping="Wrap" Text="INITIATITVE" VerticalAlignment="Bottom" Width="70" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreInitTot" Height="23.444" Margin="79.7,0,87.294,15.743" TextWrapping="Wrap" VerticalAlignment="Bottom" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreInitDexMod" HorizontalAlignment="Right" Height="23.444" Margin="0,0,43.647,15.354" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="30" IsTabStop="False" FontFamily="Segoe Marker" IsReadOnly="True"/>
+            <TextBlock x:Name="textBlock1_Copy52" HorizontalAlignment="Right" Margin="0,0,78.647,24.014" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="=" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy53" HorizontalAlignment="Right" Margin="0,0,35,24.014" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreInitMisc" HorizontalAlignment="Right" Height="23.444" Margin="0,0,0,15.354" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="30" IsTabStop="False" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy54" Margin="86.053,0,96.597,6.449" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Total" FontFamily="Segoe Marker" d:LayoutOverrides="Width"/>
+            <TextBlock x:Name="textBlock1_Copy55" HorizontalAlignment="Right" Margin="0,0,48.637,-2.201" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Dex"/><LineBreak/><Run Text="Modifer"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy56" HorizontalAlignment="Right" Margin="0,0,3.702,-2.201" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Misc"/><LineBreak/><Run Text="Modifer"/></TextBlock>
+
+        </Grid>
+        <Grid x:Name="Movement1" Height="69.187" Margin="470,135.813,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="248.276" d:IsLocked="True">
+            <TextBlock x:Name="textBlock3_Copy14" HorizontalAlignment="Left" Margin="0,13.833,0,0" TextWrapping="Wrap" Text="Land" VerticalAlignment="Top" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Height="10" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy14" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="SPEED" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy13" HorizontalAlignment="Left" Height="23.444" Margin="45,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32.13" BorderThickness="1,1,0,1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy61" HorizontalAlignment="Left" Margin="69.433,15.273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Ft." FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy14" HorizontalAlignment="Left" Height="23.444" Margin="77.13,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" BorderThickness="0,1,1,1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy62" HorizontalAlignment="Left" Margin="100,15.273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Sq." FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy63" HorizontalAlignment="Left" Margin="60,22.592,0,30.537" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="Base Speed" FontFamily="Segoe Marker" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="textBox3_Copy15" Height="23.444" Margin="118.026,0,98.12,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1,1,0,1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy64" HorizontalAlignment="Right" Margin="0,13.833,98.716,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Ft." FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy16" HorizontalAlignment="Right" Height="23.444" Margin="0,0,54.77,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="43.35" BorderThickness="0,1,1,1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy65" HorizontalAlignment="Right" Margin="0,15.273,61.146,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Sq." FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy66" HorizontalAlignment="Right" Margin="0,22.592,74.712,30.537" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="With Armor" d:LayoutOverrides="HorizontalAlignment, Height" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox9" HorizontalAlignment="Right" Margin="0,0,0,7.092" TextWrapping="Wrap" Width="49.77" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy67" HorizontalAlignment="Right" Margin="0,0,3.276,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="6.667" TextAlignment="Center" Text="Temp Modifers" Width="43.276" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy17" HorizontalAlignment="Left" Margin="0,33.15,0,12.593" TextWrapping="Wrap" Width="32.13" BorderThickness="1,1,0,1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy68" HorizontalAlignment="Left" Margin="24.433,0,0,12.592" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Ft." FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy18" HorizontalAlignment="Left" Margin="32.13,33.15,0,12.593" TextWrapping="Wrap" Width="37.87" BorderThickness="0,1,1,1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy69" HorizontalAlignment="Left" Margin="10,0,0,1.992" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Fly" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy70" HorizontalAlignment="Left" Margin="32.13,0,0,1.992" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Maneuverability" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy19" HorizontalAlignment="Left" Margin="75.5,33.15,0,12.593" TextWrapping="Wrap" Width="36.63" BorderThickness="1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy71" HorizontalAlignment="Left" Margin="101.563,0,0,12.592" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Ft." FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy72" HorizontalAlignment="Left" Margin="91.836,0,0,1.992" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Swim" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy20" Margin="117.93,33.15,93.716,12.593" TextWrapping="Wrap" BorderThickness="1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy73" HorizontalAlignment="Right" Margin="0,0,98.716,12.592" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Ft." FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy74" HorizontalAlignment="Right" Margin="0,0,103.276,1.799" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Climb" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="textBox3_Copy21" HorizontalAlignment="Right" Margin="0,33.151,54.77,12.592" TextWrapping="Wrap" Width="36.63" BorderThickness="1" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy75" HorizontalAlignment="Right" Margin="0,0,59.768,12.593" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Ft." FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy76" HorizontalAlignment="Right" Margin="0,0,61.146,2.12" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Burrow" FontFamily="Segoe Marker"/>
+
+        </Grid>
+        <Grid x:Name="AC1" Height="35.514" Margin="10,299.486,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="383.702">
+            <TextBlock x:Name="textBlock2_Copy15" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="AC" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" d:LayoutOverrides="VerticalAlignment" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy15" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Armor Class" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" Margin="0,13.327,0,13.32" d:LayoutOverrides="Height" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acTotal" HorizontalAlignment="Left" Margin="44.853,0.411,0,14.187" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy77" HorizontalAlignment="Left" Margin="76.206,6.851,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="= 10 + " FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acBonus" HorizontalAlignment="Left" Margin="98.626,0.411,0,14.187" TextWrapping="Wrap" Width="28" IsTabStop="False" TextChanged="SetAC"/>
+            <TextBlock x:Name="textBlock1_Copy78" HorizontalAlignment="Left" Margin="131.626,6.851,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acShield" HorizontalAlignment="Left" Margin="140.273,0.411,0,14.187" TextWrapping="Wrap" Width="28" IsTabStop="False" TextChanged="SetAC"/>
+            <TextBlock x:Name="textBlock1_Copy79" HorizontalAlignment="Left" Margin="173.273,6.851,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acNatArmor" HorizontalAlignment="Right" Margin="0,0.412,83.294,14.186" TextWrapping="Wrap" Width="28" TabIndex="20" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy80" HorizontalAlignment="Right" Margin="0,6.851,74.647,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acDefMod" HorizontalAlignment="Right" Margin="0,0.412,41.647,14.186" TextWrapping="Wrap" Width="28" IsTabStop="False" TextChanged="SetAC"/>
+            <TextBlock x:Name="textBlock1_Copy81" HorizontalAlignment="Right" Margin="0,6.851,33,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acDex" Margin="181.559,0.412,166.941,14.186" TextWrapping="Wrap" IsTabStop="False" IsReadOnly="True"/>
+            <TextBlock x:Name="textBlock1_Copy82" HorizontalAlignment="Right" Margin="0,6.851,158.294,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acSize" HorizontalAlignment="Right" Margin="0,0.412,125.294,14.186" TextWrapping="Wrap" Width="28" IsTabStop="False" TextChanged="SetAC"/>
+            <TextBlock x:Name="textBlock1_Copy83" HorizontalAlignment="Right" Margin="0,6.851,116.647,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="acMisc" Margin="0,0.412,0,14.186" TextWrapping="Wrap" HorizontalAlignment="Right" Width="28" IsTabStop="False" TextChanged="SetAC"/>
+            <TextBlock x:Name="textBlock1_Copy84" HorizontalAlignment="Left" Margin="52.376,0,0,2.692" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="Total" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy85" HorizontalAlignment="Left" Margin="104.239,0,0,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"><Run Text="Armor"/><LineBreak/><Run Text="Bonu"/><Run Text="s"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy86" HorizontalAlignment="Left" Margin="144.239,0,0,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"><Run Text="Shield"/><LineBreak/><Run Text="Bonu"/><Run Text="s"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy87" Margin="184.156,0,172.397,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" d:LayoutOverrides="VerticalAlignment, Width" FontFamily="Segoe Marker"><Run Text="Dex"/><LineBreak/><Run Text="Modifier"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy88" HorizontalAlignment="Right" Margin="0,0,129.897,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"><Run Text="Size"/><LineBreak/><Run Text="Modifier"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy89" HorizontalAlignment="Right" Margin="0,0,86.968,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"><Run Text="Natural"/><LineBreak/><Run Text="Armor"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy90" HorizontalAlignment="Right" Margin="0,0,40.167,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"><Run Text="D"/><Run Text="eflection"/><LineBreak/><Run Text="Modifier"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy91" Margin="0,0,0,-4.401" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" HorizontalAlignment="Right" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"><Run Text="Misc"/><LineBreak/><Run Text="Modifier"/></TextBlock>
+            <Grid x:Name="MoreAC" HorizontalAlignment="Left" Height="21.214" Margin="0,39.915,0,-25.615" VerticalAlignment="Top" Width="180">
+                <TextBlock x:Name="textBlock2_Copy" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Touch" VerticalAlignment="Top" Width="39.7" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker"/>
+                <TextBox x:Name="acTouch" HorizontalAlignment="Left" Margin="45.227,0.298,0,0" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+                <TextBlock x:Name="textBlock2_Copy1" Height="15" TextWrapping="Wrap" Text="Flat-Footed" VerticalAlignment="Top" Foreground="White" Background="Black" TextAlignment="Center" Margin="80.3,0.021,35,0" FontFamily="Segoe Marker"/>
+                <TextBox x:Name="acFlat" HorizontalAlignment="Right" Margin="0,0.298,0,0" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+                <TextBlock x:Name="textBlock3_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Armor Class" FontSize="6.667" Foreground="White" Background="Black" Width="39.7" TextAlignment="Center" VerticalAlignment="Bottom" FontFamily="Segoe Marker"/>
+                <TextBlock x:Name="textBlock3_Copy1" TextWrapping="Wrap" Text="Armor Class" FontSize="6.667" Foreground="White" Background="Black" TextAlignment="Center" Margin="80.3,0,35,-0.019" VerticalAlignment="Bottom" FontFamily="Segoe Marker"/>
+            </Grid>
+
+        </Grid>
+        <Image x:Name="Logo1" HorizontalAlignment="Left" Height="55.974" Margin="10,10,0,0" VerticalAlignment="Top" Width="189.255" Source="PathfinderRPGLogo_500.jpeg" d:IsLocked="True"/>
+        <Grid x:Name="Saves" HorizontalAlignment="Left" Height="81.204" Margin="6.857,370,0,0" VerticalAlignment="Top" Width="380">
+            <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="82.133,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Total" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy2" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Fortitude" VerticalAlignment="Top" Width="64.7" Foreground="White" Background="Black" TextAlignment="Center" Margin="0,8.304,0,0" d:LayoutOverrides="VerticalAlignment" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="(Constitution)" FontSize="6.667" Foreground="White" Background="Black" Width="64.7" TextAlignment="Center" Margin="0,21.629,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sFortTotal" HorizontalAlignment="Left" Margin="75,8.304,0,0" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="108,13.84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="=" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="150.19,14.01,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sFortBase" HorizontalAlignment="Left" Margin="117.19,8.304,0,0" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Right" Margin="0,14.01,183.43,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sFortAb" HorizontalAlignment="Left" Margin="159.38,8.304,0,0" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Right" Margin="0,14.01,141.24,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sFortMagic" HorizontalAlignment="Right" Margin="0,8.304,150.43,0" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy6" HorizontalAlignment="Right" Margin="0,14.01,99.05,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sFortMisc" HorizontalAlignment="Right" Margin="0,8.304,108.24,0" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="sFortTemp" HorizontalAlignment="Right" Margin="0,8.304,66.05,0" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock2_Copy3" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Reflex" VerticalAlignment="Top" Width="64.7" Foreground="White" Background="Black" TextAlignment="Center" Margin="0,34.22,0,0" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy3" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="64.7" TextAlignment="Center" Margin="0,0,0,25.915" VerticalAlignment="Bottom" FontFamily="Segoe Marker"><Run Text="("/><Run Text="Dexterity"/><Run Text=")"/></TextBlock>
+            <TextBox x:Name="sRefTot" HorizontalAlignment="Left" Margin="75,34.22,0,26.068" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy7" HorizontalAlignment="Left" Margin="108,39.756,0,32.154" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="=" FontFamily="Segoe Marker" d:LayoutOverrides="Height"/>
+            <TextBlock x:Name="textBlock1_Copy8" HorizontalAlignment="Left" Margin="150.19,39.926,0,31.984" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="sRefBase" HorizontalAlignment="Left" Margin="117.19,34.22,0,26.068" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy9" HorizontalAlignment="Right" Margin="0,39.926,183.43,31.984" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="sRefAb" HorizontalAlignment="Left" Margin="159.38,34.22,0,26.068" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy10" HorizontalAlignment="Right" Margin="0,39.926,141.24,31.984" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="sRefMagic" HorizontalAlignment="Right" Margin="0,34.22,150.43,26.068" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy11" HorizontalAlignment="Right" Margin="0,39.926,99.05,31.984" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker" d:LayoutOverrides="Height"/>
+            <TextBox x:Name="sRefMisc" HorizontalAlignment="Right" Margin="0,34.22,108.24,26.068" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBox x:Name="sRefTemp" HorizontalAlignment="Right" Margin="0,34.22,66.05,26.068" TextWrapping="Wrap" Width="28" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock2_Copy4" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Will" VerticalAlignment="Top" Width="64.7" Foreground="White" Background="Black" TextAlignment="Center" Margin="0,60.136,0,0" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock3_Copy4" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="64.7" TextAlignment="Center" Margin="0,0,0,-0.001" VerticalAlignment="Bottom" FontFamily="Segoe Marker"><Run Text="("/><Run Text="Wisdom"/><Run Text=")"/></TextBlock>
+            <TextBox x:Name="sWillTot" HorizontalAlignment="Left" Margin="75,0,0,0.152" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock1_Copy12" HorizontalAlignment="Left" Margin="108,0,0,6.238" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="=" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy13" HorizontalAlignment="Left" Margin="150.19,0,0,6.068" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sWillBase" HorizontalAlignment="Left" Margin="117.19,0,0,0.152" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock1_Copy14" HorizontalAlignment="Right" Margin="0,0,183.43,6.068" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sWillAb" HorizontalAlignment="Left" Margin="159.38,0,0,0.152" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock1_Copy15" HorizontalAlignment="Right" Margin="0,0,141.24,6.068" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sWillMagic" HorizontalAlignment="Right" Margin="0,0,150.43,0.152" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock1_Copy16" HorizontalAlignment="Right" Margin="0,0,99.05,6.068" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="sWillMisc" HorizontalAlignment="Right" Margin="0,0,108.24,0.152" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="sWillTemp" HorizontalAlignment="Right" Margin="0,0,66.05,0.152" TextWrapping="Wrap" Width="28" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="sFortTemp_Copy" HorizontalAlignment="Right" Margin="0,8.304,0,0.152" TextWrapping="Wrap" Width="61.05" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock1_Copy17" HorizontalAlignment="Left" Margin="345,8.304,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Temp Mods" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy18" HorizontalAlignment="Left" Margin="117.42,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Base save" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy19" HorizontalAlignment="Left" Margin="156.208,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Ability mod" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy20" HorizontalAlignment="Right" Margin="0,0,150.43,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Magic Mod" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy21" HorizontalAlignment="Right" Margin="0,0,108.283,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Misc Mod" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy22" HorizontalAlignment="Right" Margin="0,0,66.05,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Temp Mod" FontFamily="Segoe Marker"/>
+        </Grid>
+        <Grid x:Name="BaB" HorizontalAlignment="Left" Height="21.833" Margin="6.857,460,0,0" VerticalAlignment="Top" Width="356.888" d:IsLocked="True">
+            <TextBlock x:Name="textBlock2_Copy5" HorizontalAlignment="Left" Height="17.192" TextWrapping="Wrap" Text="Base Attack Bonus" VerticalAlignment="Top" Width="154.38" Foreground="White" Background="Black" TextAlignment="Center" Margin="0,0.917,0,0" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="h" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="154.38" TextAlignment="Center" Margin="0,0,0,0.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="coreBab" Margin="164.398,0.917,148.745,0" TextWrapping="Wrap" IsTabStop="False" TextChanged="UpdateBab"/>
+            <TextBlock x:Name="textBlock2_Copy6" HorizontalAlignment="Right" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="89.38" Foreground="White" Background="Black" TextAlignment="Center" Margin="0,0.917,48.745,0" FontSize="9.333" FontFamily="Segoe Marker"><Run Text="Spell"/><LineBreak/><Run Text="Resistance"/></TextBlock>
+            <TextBox x:Name="coreSpellRes" HorizontalAlignment="Right" Margin="0,0,0,0.917" TextWrapping="Wrap" Width="43.745" IsTabStop="False"/>
+        </Grid>
+        <Grid x:Name="CombatManouvre" HorizontalAlignment="Left" Margin="10.602,500,0,476" Width="376.255" d:IsLocked="True">
+            <TextBlock x:Name="textBlock2_Copy7" HorizontalAlignment="Left" Height="17.192" TextWrapping="Wrap" Text="CMB" VerticalAlignment="Top" Width="70.815" Foreground="White" Background="Black" TextAlignment="Center" FontFamily="Segoe Marker" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock3_Copy6" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.815" TextAlignment="Center" Margin="0,12.256,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cmbTot" HorizontalAlignment="Left" Margin="80.653,0,0,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="cmbBab" HorizontalAlignment="Left" Margin="122.865,0,0,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy23" HorizontalAlignment="Left" Margin="113.675,4.842,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="=" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy24" HorizontalAlignment="Left" Margin="155.657,4.842,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cmbStr" Margin="167.416,0,181.047,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy25" HorizontalAlignment="Right" Margin="0,4.842,171.857,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cmbSize" HorizontalAlignment="Right" Margin="0,0,136.857,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy26" HorizontalAlignment="Right" Margin="0,43.926,127.667,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy27" HorizontalAlignment="Left" Margin="84.998,20.916,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Total" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy28" HorizontalAlignment="Left" Margin="129.998,20.916,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="BaB" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy29" Margin="167.416,20.916,184.055,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Strength" FontFamily="Segoe Marker" d:LayoutOverrides="Width"/>
+            <TextBlock x:Name="textBlock1_Copy30" HorizontalAlignment="Right" Margin="0,20.916,138.442,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Size Mod" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy16" HorizontalAlignment="Left" Height="17.192" TextWrapping="Wrap" VerticalAlignment="Top" Width="70.815" Foreground="White" Background="Black" TextAlignment="Center" Margin="0,39.084,0,0" FontFamily="Segoe Marker"><Run Text="CM"/><Run Text="D"/></TextBlock>
+            <TextBlock x:Name="textBlock3_Copy7" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.815" TextAlignment="Center" Margin="0,51.34,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cmdTot" HorizontalAlignment="Left" Margin="80.653,39.084,0,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="cmdBab" HorizontalAlignment="Left" Margin="122.865,39.084,0,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy31" HorizontalAlignment="Left" Margin="113.675,43.926,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="=" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy32" HorizontalAlignment="Left" Margin="155.657,43.926,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cmdStr" Margin="167.416,39.084,181.047,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy33" HorizontalAlignment="Right" Margin="0,43.926,171.857,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="+" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cmdDex" HorizontalAlignment="Right" Margin="0,39.084,136.857,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy34" HorizontalAlignment="Left" Margin="84.998,60,0,0" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="Total" FontFamily="Segoe Marker" VerticalAlignment="Top" Height="14.293"/>
+            <TextBlock x:Name="textBlock1_Copy35" HorizontalAlignment="Left" Margin="129.998,60,0,0" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="BaB" FontFamily="Segoe Marker" Height="14.293" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy37" HorizontalAlignment="Right" Margin="0,60,138.952,0" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="Dex Mod" FontFamily="Segoe Marker" VerticalAlignment="Top" Height="14.293"/>
+            <TextBox x:Name="cmdSize" HorizontalAlignment="Right" Margin="0,39.084,94.875,0" TextWrapping="Wrap" Width="27.792" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock1_Copy38" HorizontalAlignment="Right" Margin="0,60,94.365,0" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="Size Mod" FontFamily="Segoe Marker" VerticalAlignment="Top" Height="14.293"/>
+            <TextBlock x:Name="textBlock1_Copy39" HorizontalAlignment="Right" Margin="0,43.926,77.025,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="+"/><Run Text=" 10"/></TextBlock>
+            <TextBox x:Name="cmbMods" HorizontalAlignment="Right" Margin="0,0.333,0,0" TextWrapping="Wrap" Width="122.667" IsTabStop="False" Height="34.084" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock1_Copy40" HorizontalAlignment="Right" Margin="0,0.333,4.095,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="8" TextAlignment="Center" Text="Modifiers" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy36" HorizontalAlignment="Left" Margin="168.353,60,0,0" TextWrapping="Wrap" FontSize="8" TextAlignment="Center" Text="Strength" FontFamily="Segoe Marker" Height="14.293" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="WeaponGrid" HorizontalAlignment="Left" Height="353.108" Margin="12.194,596.892,0,0" VerticalAlignment="Top" Width="381.508" d:IsLocked="True">
+            <TextBlock x:Name="textBlock3_Copy16" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="66.352" TextAlignment="Center" Margin="0,9.448,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy17" Height="17.192" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="Black" TextAlignment="Center" Margin="43.415,0,140.905,0" FontFamily="Segoe Marker" Text="Weapon" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock3_Copy17" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.11" Margin="0,9.448,80.075,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Attack Bonus"/>
+            <TextBox x:Name="wName1" Margin="0,17.192,159.082,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="wBonus1" HorizontalAlignment="Right" Margin="0,17.192,80.075,0" TextWrapping="Wrap" Width="81.512" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="wCrit1" HorizontalAlignment="Right" Margin="0,17.192,0,0" TextWrapping="Wrap" Width="81.513" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy18" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="80.075" Margin="0,9.448,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Critical" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy19" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="161.587" Margin="0,38.108,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Damage" TextAlignment="Center"/>
+            <TextBox x:Name="wDamage1" HorizontalAlignment="Right" Margin="0,45.852,0,0" TextWrapping="Wrap" Width="161.587" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy20" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Margin="126.794,38.108,161.587,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Ammunition" TextAlignment="Center"/>
+            <TextBox x:Name="wAmmo1" Margin="126.794,45.852,159.082,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy21" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="61.209" Margin="65.585,38.108,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Range" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy22" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="65.585" Margin="0,38.108,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Type" TextAlignment="Center"/>
+            <TextBox x:Name="wRange1" HorizontalAlignment="Left" Margin="65.585,45.852,0,0" TextWrapping="Wrap" Width="64.565" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="wType1" HorizontalAlignment="Left" Margin="0,45.852,0,0" TextWrapping="Wrap" Width="66.352" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy23" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="66.352" TextAlignment="Center" Margin="0,79.02,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy18" Height="17.192" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="Black" TextAlignment="Center" Margin="43.415,69.572,140.905,0" FontFamily="Segoe Marker" Text="Weapon" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock3_Copy24" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.11" Margin="0,79.02,80.075,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Attack Bonus"/>
+            <TextBox x:Name="wName2" Margin="0,86.764,159.082,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="wBonus2" HorizontalAlignment="Right" Margin="0,86.764,80.075,0" TextWrapping="Wrap" Width="81.512" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="wCrit2" HorizontalAlignment="Right" Margin="0,86.764,0,0" TextWrapping="Wrap" Width="81.513" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy25" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="80.075" Margin="0,79.02,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Critical" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy26" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="161.587" Margin="0,107.68,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Damage" TextAlignment="Center"/>
+            <TextBox x:Name="wDamage2" HorizontalAlignment="Right" Margin="0,115.424,0,0" TextWrapping="Wrap" Width="161.587" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy27" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Margin="126.794,107.68,161.587,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Ammunition" TextAlignment="Center"/>
+            <TextBox x:Name="wAmmo2" Margin="126.794,115.424,159.082,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy28" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="61.209" Margin="65.585,107.68,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Range" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy29" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="65.585" Margin="0,107.68,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Type" TextAlignment="Center"/>
+            <TextBox x:Name="wRange2" HorizontalAlignment="Left" Margin="65.585,115.424,0,0" TextWrapping="Wrap" Width="64.565" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBox x:Name="wType2" HorizontalAlignment="Left" Margin="0,115.424,0,0" TextWrapping="Wrap" Width="66.352" IsTabStop="False" Height="20.916" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock3_Copy30" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="66.352" TextAlignment="Center" Margin="0,149.872,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy19" Height="17.192" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="Black" TextAlignment="Center" Margin="43.415,140.424,140.905,0" FontFamily="Segoe Marker" Text="Weapon" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock3_Copy31" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.11" Margin="0,149.872,80.075,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Attack Bonus"/>
+            <TextBox x:Name="wName3" Margin="0,157.616,159.082,174.576" TextWrapping="Wrap" IsTabStop="False"/>
+            <TextBox x:Name="wBonus3" HorizontalAlignment="Right" Margin="0,157.616,80.075,174.576" TextWrapping="Wrap" Width="81.512" IsTabStop="False"/>
+            <TextBox x:Name="wCrit3" HorizontalAlignment="Right" Margin="0,157.616,0,174.576" TextWrapping="Wrap" Width="81.513" IsTabStop="False"/>
+            <TextBlock x:Name="textBlock3_Copy32" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="80.075" Margin="0,149.872,0,0" VerticalAlignment="Top" FontFamily="Segoe Marker" Text="Critical" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy33" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="161.587" Margin="0,0,0,166.832" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Damage" TextAlignment="Center"/>
+            <TextBox x:Name="wDamage3" HorizontalAlignment="Right" Margin="0,0,0,145.916" TextWrapping="Wrap" Width="161.587" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy34" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Margin="126.794,0,161.587,166.832" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Ammunition" TextAlignment="Center"/>
+            <TextBox x:Name="wAmmo3" Margin="126.794,0,159.082,145.916" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy35" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="61.209" Margin="65.585,0,0,166.832" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Range" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy36" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="65.585" Margin="0,0,0,166.832" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Type" TextAlignment="Center"/>
+            <TextBox x:Name="wRange3" HorizontalAlignment="Left" Margin="65.585,0,0,145.916" TextWrapping="Wrap" Width="64.565" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wType3" HorizontalAlignment="Left" Margin="0,0,0,145.916" TextWrapping="Wrap" Width="66.352" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy37" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="66.352" TextAlignment="Center" Margin="0,0,0,124.576" VerticalAlignment="Bottom" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy20" Height="17.192" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="Black" TextAlignment="Center" Margin="43.415,211.34,140.905,0" FontFamily="Segoe Marker" Text="Weapon"/>
+            <TextBlock x:Name="textBlock3_Copy38" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.11" Margin="0,0,80.075,124.576" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Attack Bonus"/>
+            <TextBox x:Name="wName4" Margin="0,0,159.082,103.66" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wBonus4" HorizontalAlignment="Right" Margin="0,0,80.075,103.66" TextWrapping="Wrap" Width="81.512" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wCrit4" HorizontalAlignment="Right" Margin="0,0,0,103.66" TextWrapping="Wrap" Width="81.513" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy39" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="80.075" Margin="0,0,0,124.576" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Critical" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy40" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="161.587" Margin="0,0,0,95.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Damage" TextAlignment="Center"/>
+            <TextBox x:Name="wDamage4" HorizontalAlignment="Right" Margin="0,0,0,75" TextWrapping="Wrap" Width="161.587" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy41" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Margin="126.794,0,161.587,95.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Ammunition" TextAlignment="Center"/>
+            <TextBox x:Name="wAmmo4" Margin="126.794,0,159.082,75" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy42" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="61.209" Margin="65.585,0,0,95.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Range" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy43" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="65.585" Margin="0,0,0,95.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Type" TextAlignment="Center"/>
+            <TextBox x:Name="wRange4" HorizontalAlignment="Left" Margin="65.585,0,0,75" TextWrapping="Wrap" Width="64.565" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wType4" HorizontalAlignment="Left" Margin="0,0,0,75" TextWrapping="Wrap" Width="66.352" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy44" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="66.352" TextAlignment="Center" Margin="0,0,0,49.576" VerticalAlignment="Bottom" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock2_Copy21" Height="17.192" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="Black" TextAlignment="Center" Margin="43.415,286.34,140.905,0" FontFamily="Segoe Marker" Text="Weapon"/>
+            <TextBlock x:Name="textBlock3_Copy45" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="70.11" Margin="0,0,80.075,49.576" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Attack Bonus"/>
+            <TextBox x:Name="wName5" Margin="0,0,159.082,28.66" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wBonus5" HorizontalAlignment="Right" Margin="0,0,80.075,28.66" TextWrapping="Wrap" Width="81.512" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wCrit5" HorizontalAlignment="Right" Margin="0,0,0,28.66" TextWrapping="Wrap" Width="81.513" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy46" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="80.075" Margin="0,0,0,49.576" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Critical" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy47" HorizontalAlignment="Right" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="161.587" Margin="0,0,0,20.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Damage" TextAlignment="Center"/>
+            <TextBox x:Name="wDamage5" HorizontalAlignment="Right" TextWrapping="Wrap" Width="161.587" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy48" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Margin="126.794,0,161.587,20.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Ammunition" TextAlignment="Center"/>
+            <TextBox x:Name="wAmmo5" Margin="126.794,0,159.082,0" TextWrapping="Wrap" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock3_Copy49" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="61.209" Margin="65.585,0,0,20.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Range" TextAlignment="Center"/>
+            <TextBlock x:Name="textBlock3_Copy50" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="6.667" Foreground="White" Background="Black" Width="65.585" Margin="0,0,0,20.916" VerticalAlignment="Bottom" FontFamily="Segoe Marker" Text="Type" TextAlignment="Center"/>
+            <TextBox x:Name="wRange5" HorizontalAlignment="Left" Margin="65.585,0,0,0" TextWrapping="Wrap" Width="64.565" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="wType5" HorizontalAlignment="Left" TextWrapping="Wrap" Width="66.352" IsTabStop="False" Height="20.916" VerticalAlignment="Bottom"/>
+
+        </Grid>
+        <Button x:Name="btnSave" Content="Save to file" HorizontalAlignment="Left" Height="25" Margin="245,18.504,0,0" VerticalAlignment="Top" Width="84.4" Click="SaveFile" d:IsLocked="True"/>
+        <Button x:Name="btnLoad" Content="Load from file" HorizontalAlignment="Left" Height="25" Margin="245,48.504,0,0" VerticalAlignment="Top" Width="84.4" Click="OpenFile" d:IsLocked="True"/>
+        <Grid x:Name="SkillLIST" HorizontalAlignment="Right" Margin="0,247.25,215.072,0" Width="180" Height="757.9" VerticalAlignment="Top" d:IsLocked="True">
+            <CheckBox x:Name="ckAcrobatics" Content="Acrobatics" Height="20" FontFamily="Segoe Marker" FontSize="9.333" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckAppraise" Content="Appraise" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,20,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckBluff" Content="Bluff" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,40,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckClimb" Content="Climb" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,60,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckCraft1" Content="Craft" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,80,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckCraft2" Content="Craft" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,100,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckCraft3" Content="Craft" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,120,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckDiplomacy" Content="Diplomacy" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,140,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckDisable" Content="Disable Device*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,160,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckEscape" Content="Escape Artist" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,198.9,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckFly" Content="Fly" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,218.9,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckHandle" Content="Handle Animal*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,238.9,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckHeal" Content="Heal" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,258.9,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckKnowArc" Content="Knowledge ( Arcana )*" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,278.9,0,0" Height="20" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckKnowDung" Content="Knowledge ( Dungoneering )*" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,298.9,0,0" Height="20" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckKnowEng" Content="Knowledge ( Engineering )*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,318.9,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckKnowGeo" Content="Knowledge ( Geography )*" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,338.9,0,0" Height="20" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckKnowHis" Content="Knowledge ( History )*" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,358.9,0,0" Height="20" VerticalAlignment="Top"/>
+            <CheckBox x:Name="ckKnowLoc" Content="Knowledge ( Local )*" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,378.9,0,360"/>
+            <CheckBox x:Name="ckKnowNat" Content="Knowledge ( Nature )*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,340" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckKnowNob" Content="Knowledge ( Nobility )*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,320" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckKnowPlan" Content="Knowledge ( Planes )*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,300" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckKnowRel" Content="Knowledge ( Religion )*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,280" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckLinguistic" Content="Linguistics*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,260" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckPerception" Content="Perception" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,240" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckPerform1" Content="Perform" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,220" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckPerform2" Content="Perform" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,200" Height="20" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckProf1" Content="Profession*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,180" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckProf2" Content="Profession*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,160" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckRide" Content="Ride" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,140" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckSense" Content="Sense Motive" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,120" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckSleight" Content="Sleight of Hand*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,100" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckSpellCraft" Content="Spellcraft*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,80" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckStealth" Content="Stealth" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,60" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckSurvival" Content="Survival" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,40" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckSwim" Content="Swim" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,0,20" VerticalAlignment="Bottom"/>
+            <CheckBox x:Name="ckUMD" Content="Use Magic Device*" Height="20" FontFamily="Segoe Marker" FontSize="9.333" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="txtCraft4" Height="18" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="45,77,10,0"/>
+            <TextBox x:Name="txtCraft5" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="45,95,10,0"/>
+            <TextBox x:Name="txtCraft6" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="45,115,10,0"/>
+            <TextBox x:Name="txtPerf3" Height="20" TextWrapping="Wrap" VerticalAlignment="Bottom" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="59,0,11,226"/>
+            <TextBox x:Name="txtPerf4" TextWrapping="Wrap" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Height="20" VerticalAlignment="Bottom" Margin="59,0,11,206"/>
+            <TextBox x:Name="txtProf3" TextWrapping="Wrap" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="72.755,0,11,186" Height="20" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="txtProf4" Height="20" TextWrapping="Wrap" VerticalAlignment="Bottom" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="72.755,0,11,166"/>
+            <CheckBox x:Name="ckDisgu" Content="Disguise" Height="20" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,180,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Grid x:Name="SkScoreText" HorizontalAlignment="Right" Margin="0,247.5,145.072,67.25" Width="37.276" d:IsLocked="True">
+            <TextBlock x:Name="textBlock11" Height="15" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,0,1.928,0"/>
+            <TextBlock x:Name="textBlock5_Copy115" Height="15" Margin="0,20,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy118" Height="15" Margin="0,39.9,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy121" Height="15" Margin="0,59.9,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Str"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy124" Height="15" Margin="0,80,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy127" Height="15" Margin="0,100,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy130" Height="15" Margin="0,119.659,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy133" Height="15" Margin="0,139.659,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy136" Height="15" Margin="0,159.659,1.928,0" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy139" Height="15" Margin="0,179.692,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy142" Height="15" Margin="0,199.692,1.928,0" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy145" Height="15" Margin="0,219.692,1.928,0" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy148" Height="15" Margin="0,239.692,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy151" Height="15" Margin="0,260.5,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Wis"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy154" Margin="0,280.5,1.928,0" TextWrapping="Wrap" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy157" Margin="0,300.126,1.928,0" TextWrapping="Wrap" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy160" Height="15" Margin="0,320.5,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy163" Height="15" Margin="0,340.5,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy169" Margin="0,0,1.928,378.75" TextWrapping="Wrap" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Bottom"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy172" Height="15" Margin="0,377.5,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy175" Height="15" Margin="0,396.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy178" Height="15" Margin="0,416.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy181" Height="15" Margin="0,436.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy184" Height="15" Margin="0,457.5,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy187" Height="15" Margin="0,496.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Wis"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy190" Height="15" Margin="0,516.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy193" Height="15" Margin="0,536.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy196" Height="15" Margin="0,556.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Wis"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy199" Height="15" Margin="0,576.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Wis"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy202" Height="15" Margin="0,596.25,1.928,0" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy205" Height="15" Margin="0,616.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Wis"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy208" Height="15" Margin="0,636.25,1.928,0" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy211" Height="15" Margin="0,656.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Int"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy214" Height="15" Margin="0,676.25,1.928,0" TextWrapping="Wrap" Text="= Dex" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy217" Height="15" Margin="0,696.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Wis"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy220" Height="15" Margin="0,716.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Str"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy223" Height="15" Margin="0,736.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333"><Run Text="= "/><Run Text="Cha"/></TextBlock>
+            <TextBlock x:Name="textBlock5_Copy" Height="15" Margin="0,476.25,1.928,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe Marker" FontSize="9.333" Text="= Int"/>
+
+        </Grid>
+        <Grid x:Name="SkillBonus" HorizontalAlignment="Right" Margin="0,247.5,187.348,67.25" Width="34.652" d:IsLocked="True">
+            <TextBox x:Name="skAcroTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Margin="0,-2.5,0,0"/>
+            <TextBox x:Name="skApprTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,17.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skBluffTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,37.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skClimbTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,57.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skCraft1Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,77.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skCraft2Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,97.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skCraft3Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,117.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skDipTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,137.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skDisabTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,157.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skDisguTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,177.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skEscTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,197.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skFlyTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,217.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skHaTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,237.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skHealTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,257.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnArcTot" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,277.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnDuTot" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,297.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnEngTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,317.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnGeoTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,337.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnHistTot" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,0,0,378.75" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="skKnLocTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,377.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnNatTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,397.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnNobTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,417.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnPlanTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,437.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skKnRelTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,457.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skPercTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,497.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skPerf1Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,517.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skPerf2Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,537.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skProf1Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,557.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skProf2Tot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,577.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skRideTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,597.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skSensTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,617.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skSleightTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,637.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skSpellTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,657.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skStealthTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,677.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skSurvTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,697.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skSwimTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,717.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skUmdTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,737.5,0,-1.25" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skLingTot" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,477.5,0,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+        </Grid>
+        <Grid x:Name="SkillAbility" HorizontalAlignment="Right" Margin="0,248,102,66" Width="43" d:IsLocked="True">
+            <TextBox x:Name="skModAcro" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,-3,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModAppraise" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,17,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skModBluff" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,37,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModClimb" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,57,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModCraft1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,77,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModCraft2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,97,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModCraft3" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,117,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModDipl" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,137,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModDisab" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,157,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModDisgu" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,177,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModEscape" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,197,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModFly" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,217,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skModHandle" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,237,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModHeal" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,257,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModKno1" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,277,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skModKno2" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,297,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skModKno3" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,317,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModKno4" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,337,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModKno5" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="-0.348,0,17.348,380" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" Height="15" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="skModKno6" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,377,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModKno7" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,397,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModKno8" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,417,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModKno9" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,437,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModLing" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,477,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModPerc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,497,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModPerf1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,517,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModPerf2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,537,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True" RenderTransformOrigin="0.507,0.403"/>
+            <TextBox x:Name="skModProf1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,557,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModProf2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,577,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModRide" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,597,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModSens" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,617,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModSleight" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,637,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModSpell" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,657,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModStealth" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,677,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModSurv" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,697,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModSwim" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,717,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBox x:Name="skModUseMd" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="-0.348,737,17.348,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBlock x:Name="textBlock5_Copy113" Height="15.05" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy116" Height="15.05" Margin="0,20,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy119" Height="15.05" Margin="0,39.9,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy122" Height="15.05" Margin="0,59.9,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy125" Height="15.05" Margin="0,80,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy128" Height="15.05" Margin="0,100,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy131" Height="15.05" Margin="0,119.9,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy134" Height="15.05" Margin="0,140.05,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy137" Height="15.05" Margin="0,160.1,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy140" Height="15.05" Margin="0,180.1,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy143" Height="15.05" Margin="0,200,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy146" Margin="0,220,0,0" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock5_Copy149" Height="15.05" Margin="0,240,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy152" Height="15.05" Margin="0,260,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy155" Margin="0,279.9,0,0" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock5_Copy158" Margin="0,299.9,0,0" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock5_Copy161" Height="15.05" Margin="0,319.35,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy164" Height="15.05" Margin="0,337.05,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy167" Height="15.05" Margin="0,357.1,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock5_Copy173" Height="15.05" Margin="0,0,0,359.5" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy176" Height="15.05" Margin="0,0,0,339.5" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy179" Height="15.05" Margin="0,0,0,319.6" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy182" Height="15.05" Margin="0,0,0,299.6" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy185" Height="15.05" Margin="0,0,0,260.6" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy188" Height="15.05" Margin="0,0,0,240" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy191" Height="15.05" Margin="0,0,0,220.1" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy194" Margin="0,0,0,200.1" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock5_Copy197" Height="15.05" Margin="0,0,0,178.95" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy200" Height="15.05" Margin="0,0,0,158.9" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy203" Height="15.05" Margin="0,0,0,138.85" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy206" Height="15.05" Margin="0,0,0,118.8" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy209" Height="15.05" Margin="0,0,0,100" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy212" Height="15.05" Margin="0,0,0,80" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy215" Height="15.05" Margin="0,0,0,60.1" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy218" Height="15.05" Margin="0,0,0,40.1" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy221" Height="15.05" Margin="0,0,0,20.1" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy224" Height="15.05" Margin="0,0,0,0.1" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skModKno10" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,457,17,0" FontFamily="Segoe Marker" FontSize="9.333" IsReadOnly="True"/>
+            <TextBlock x:Name="textBlock5_Copy1" Height="15.05" Margin="0,0,0,279.45" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+
+        </Grid>
+        <Grid x:Name="SkillRanks" HorizontalAlignment="Right" Margin="0,247.35,58.652,63.717" Width="43.348" d:IsLocked="True">
+            <TextBox x:Name="skAcroRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,-2.35,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skBluffRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,37.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skClimbRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,57.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skCraftRank1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,77.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skCraftRank2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,97.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skCraftRank3" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,117.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skDiploRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,137.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skDisaRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,157.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skDisguRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,177.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skEscRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,197.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skFlyRank" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,217.65,17,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skHaRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,237.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skHealRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,257.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowArcanaRank1" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,277.65,17,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnowDungRank2" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,297.65,17,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnowEngiRank3" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,317.65,17,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnowGeogRank4" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,337.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowHistRank5" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,357.65,17,0" FontFamily="Segoe Marker" FontSize="9.333" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBox x:Name="skKnowReliRank10" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,0,17,282.083" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBox x:Name="skKnowLocaRank6" Height="15" TextWrapping="Wrap" VerticalAlignment="Bottom" BorderThickness="0,0,0,1" Margin="0,0,17,362.283" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowNatuRank7" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,397.75,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowNobiRank8" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,417.8,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowPlaneRank9" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,437.85,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skLingRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,477.85,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skPercRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,497.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skPerfRank1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,517.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skPerfRank2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,537.65,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skProfRank1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,557.85,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skProfRank2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,577.9,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skRideRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,597.95,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSensRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,618,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSleightRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,638,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSpellRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,658,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skStealthRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,678,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSurvRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,698,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skUmdRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,738,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSwimRank" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,718,17,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy126" Height="15.05" Margin="0,0.15,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy129" Height="15.05" Margin="0,20.2,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy132" Height="15.05" Margin="0,40.25,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy135" Height="15.05" Margin="0,0,0,302.083" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy138" Height="15.05" Margin="0,0,0,282.033" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy141" Height="15.05" Margin="0,0,0,262.283" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy144" Height="15.05" Margin="0,0,0,242.233" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy147" Height="15.05" Margin="0,0,0,222.183" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy150" Height="15.05" Margin="0,0,0,202.133" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy153" Margin="0,0,0,182.083" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock5_Copy156" Margin="0,0,0,162.033" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock5_Copy159" Margin="0,0,0,141.983" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock5_Copy162" Margin="0,0,0,121.933" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock5_Copy165" Height="15.05" Margin="0,0,0,103.683" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy168" Height="15.05" Margin="0,60.7,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" d:LayoutOverrides="VerticalAlignment"/>
+            <TextBlock x:Name="textBlock5_Copy174" Height="15.05" Margin="0,80,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy177" Margin="0,100.05,0,0" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock5_Copy180" Height="15.05" Margin="0,119.95,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy183" Height="15.05" Margin="0,139.95,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy186" Height="15.05" Margin="0,160.05,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy189" Height="15.05" Margin="0,180.05,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy192" Height="15.05" Margin="0,199.95,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy195" Margin="0,219.95,0,0" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock5_Copy198" Height="15.05" Margin="0,240.05,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy201" Height="15.05" Margin="0,260.05,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy204" Margin="0,279.95,0,0" TextWrapping="Wrap" Text="+" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333" Height="15.05" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock5_Copy207" Height="15.05" Margin="0,299.95,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy210" Height="15.05" Margin="0,319.95,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy213" Height="15.05" Margin="0,338.95,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy216" Height="15.05" Margin="0,357.6,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy219" Height="15.05" Margin="0,0,0,362.233" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy222" Height="15.05" Margin="0,0,0,342.183" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy225" Height="15.05" Margin="0,0,0,322.133" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skAppRank" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,17.65,17,722.283" FontFamily="Segoe Marker" FontSize="9.333" Height="15"/>
+            <TextBlock x:Name="textBlock5_Copy2" Height="15.05" Margin="0,0,0,83.633" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy3" Height="15.05" Margin="0,0,0,63.583" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy4" Height="15.05" Margin="0,0,0,43.533" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy5" Height="15.05" Margin="0,0,0,23.483" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBlock x:Name="textBlock5_Copy6" Height="15.05" Margin="0,0,0,3.433" TextWrapping="Wrap" Text="+" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="12" FontFamily="Segoe Marker" FontSize="9.333"/>
+
+        </Grid>
+        <Grid x:Name="SkillMisc" HorizontalAlignment="Right" Margin="0,247.25,25.652,63.75" Width="26.348" d:IsLocked="True">
+            <TextBox x:Name="skLingMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,477.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skPercMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,497.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skPerfMisc1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,517.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skPerfMisc2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,537.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skProfMisc1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,557.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skProfMisc2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,577.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skRideMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,597.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSensMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,617.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSleightMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,637.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSpellMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,657.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skStealthMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,677.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSurvMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,697.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skSwimMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,717.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skUmdMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,737.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skAcroMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" FontFamily="Segoe Marker" FontSize="9.333" Margin="0,-2.25,0,0"/>
+            <TextBox x:Name="skAppMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,17.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skBluffMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,37.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skClimbMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,57.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skCraftMisc1" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,77.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skCraftMisc2" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,97.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skCraftMisc3" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,117.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skDiploMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,137.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skDisaMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,157.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skDisguMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,177.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skEscMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,197.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skFlyMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,217.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skHaMisc" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,237.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skHealMisc" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,257.75,0,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnowMisc1" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,277.75,0,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnowMisc2" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,297.75,0,0" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Top"/>
+            <TextBox x:Name="skKnowMisc3" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,317.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowMisc4" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,337.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowMisc5" TextWrapping="Wrap" BorderThickness="0,0,0,1" Margin="0,0,0,382.25" FontFamily="Segoe Marker" FontSize="9.333" Height="15" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="skKnowMisc6" Height="15" TextWrapping="Wrap" VerticalAlignment="Bottom" BorderThickness="0,0,0,1" Margin="0,0,0,362.25" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowMisc7" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,397.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowMisc8" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,417.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowMisc9" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,437.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+            <TextBox x:Name="skKnowMisc10" Height="15" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,457.75,0,0" FontFamily="Segoe Marker" FontSize="9.333"/>
+
+        </Grid>
+        <Grid x:Name="SkillTitleText" HorizontalAlignment="Right" Height="26.879" Margin="0,217.251,18.724,0" VerticalAlignment="Top" Width="383" d:IsLocked="True">
+            <TextBlock x:Name="textBlock1_Copy57" HorizontalAlignment="Left" Margin="0,10.53,0,3.349" TextWrapping="Wrap" FontSize="9.333" TextAlignment="Center" Text="Skill Names" Width="68" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy58" Margin="170.837,0,145,1.88" TextWrapping="Wrap" FontSize="9.333" TextAlignment="Center" FontFamily="Segoe Marker"><Run Text="Total"/><LineBreak/><Run Text="Bonus"/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy59" HorizontalAlignment="Right" Margin="0,1.237,100,0.643" TextWrapping="Wrap" FontSize="9.333" TextAlignment="Center" Width="30" FontFamily="Segoe Marker"><Run Text="Ability"/><LineBreak/><Run Text="Mod."/></TextBlock>
+            <TextBlock x:Name="textBlock1_Copy60" HorizontalAlignment="Right" Margin="0,1.88,55,0" TextWrapping="Wrap" FontSize="9.333" TextAlignment="Center" Width="30" Text="Ranks" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Right" Margin="0,0,0,1.88" TextWrapping="Wrap" FontSize="9.333" TextAlignment="Center" Width="30" FontFamily="Segoe Marker"><Run Text="Misc"/><LineBreak/><Run Text="Mod."/></TextBlock>
+
+        </Grid>
+        <Grid x:Name="Conditionals_and_language" HorizontalAlignment="Left" Height="52.5" Margin="12.194,0,0,58.5" VerticalAlignment="Bottom" Width="380.612">
+            <TextBox x:Name="cMod1" HorizontalAlignment="Left" Margin="0,15,0,18.75" TextWrapping="Wrap" Width="187.061" BorderThickness="0,0,0,1" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="15" TextWrapping="Wrap" Text="Conditional Modifiers" VerticalAlignment="Top" Width="149.093" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="cMod2" HorizontalAlignment="Left" Height="18.75" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="187.061" BorderThickness="0,0,0,1" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="Lang1" HorizontalAlignment="Right" Margin="0,15,0,18.75" TextWrapping="Wrap" Width="188.551" BorderThickness="0,0,0,1" FontFamily="Segoe Marker"/>
+            <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Right" Height="15" Margin="0,0,38.27,0" TextWrapping="Wrap" Text="Languages" VerticalAlignment="Top" Width="150.281" FontFamily="Segoe Marker"/>
+            <TextBox x:Name="Lang2" HorizontalAlignment="Right" Height="18.75" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="188.551" BorderThickness="0,0,0,1" FontFamily="Segoe Marker"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
